@@ -6,7 +6,7 @@
 #        Author: g.goodian@gmail.com
 #   Description: ---
 #        Create: 2018-09-05 10:40:23
-# Last Modified: 2018-09-05 14:35:48
+# Last Modified: 2018-09-05 14:41:20
 #
 import os
 import sys
@@ -43,7 +43,6 @@ def do_get_copy(url):
     html = http_request_get(url)
     bsObj = BeautifulSoup(html,"html.parser")
     for link in bsObj.find_all("div", class_ = "item item-zt item-lz"):
-        print link
         date = link.find("p", class_ = "time fc-gray").text
         text = link.find("div", class_="bd").text.encode("utf-8")
         write_doc(date, text)
